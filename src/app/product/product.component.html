@@ -1,0 +1,24 @@
+    <div id="tabs">
+        <ul class="tabs" *ngFor="let parent of output; let i = index">
+            <li class="tab">
+                <input type="radio" name="tabs" checked="checked" id="tab{{i}}" />
+                <label for="tab{{i}}">{{parent.name}}</label>
+                <div id="tab-content1" class="content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4" *ngFor="let group of parent.value; let i = index">
+                                <div class="mens-top">
+                                    <h6>{{group.name}}</h6>
+                                    <ul *ngFor="let category of group.value; let i = index">
+                                        <div class="cat-list">
+                                            <p>{{category.category_name}}</p>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
